@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a35">
+  <meta name="description" content="TV MONDE AS - Télévision, sport, films et séries.">
+  <title>TV MONDE AS</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#">
+    <span class="logo">AS</span>
+    <span>
+      <strong>TV MONDE <i>AS</i></strong>
+      <small>LE MONDE SUR VOTRE ÉCRAN</small>
+    </span>
+  </a>
+  <button id="installBtn" hidden>Installer ↓</button>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">VOTRE TÉLÉVISION INTERNATIONALE</p>
+    <h1>Le monde<br><span>sur votre écran.</span></h1>
+    <p>Regardez des chaînes, découvrez des films et retrouvez vos vidéos préférées.</p>
+    <button class="primary" id="exploreBtn">Explorer les programmes ↓</button>
+  </section>
+
+  <section class="offline-status">
+    <span id="connectionStatus">Vérification de la connexion...</span>
+  </section>
+
+  <section id="programmes">
+    <h2>Explorer TV MONDE AS</h2>
+    <input id="searchInput" placeholder="Rechercher un programme...">
+
+    <nav class="tabs">
+      <button class="active" data-category="all">Tout</button>
+      <button data-category="live">Direct</button>
+      <button data-category="news">Actualités</button>
+      <button data-category="sport">Sports</button>
+      <button data-category="movies">Films</button>
+      <button data-category="series">Séries</button>
+      <button data-category="favorites">Favoris</button>
+      <button data-category="downloads">Téléchargements</button>
+    </nav>
+
+    <div id="channelGrid" class="grid"></div>
+    <p id="emptyState" hidden>Aucun programme disponible.</p>
+  </section>
+
+  <section class="player-section" id="playerSection">
+    <h2 id="playerTitle">Lecteur TV</h2>
+    <video id="videoPlayer" controls playsinline></video>
+    <p id="playerMessage">Choisis une vidéo ou une chaîne.</p>
+    <a id="sourceLink" href="#" target="_blank" rel="noopener" hidden>
+      Ouvrir la source officielle
+    </a>
+  </section>
+
+  <section class="add-section">
+    <h2>Ajouter un programme autorisé</h2>
+    <p>Ajoute une vidéo MP4 ou une source officielle dont le téléchargement est autorisé.</p>
+
+    <form id="addForm">
+      <input id="newName" placeholder="Nom du programme" required>
+      <select id="newCategory">
+        <option value="live">Télévision</option>
+        <option value="news">Actualités</option>
+        <option value="sport">Sports</option>
+        <option value="movies">Films</option>
+        <option value="series">Séries</option>
+      </select>
+      <input id="newUrl" type="url" placeholder="Lien HTTPS de la vidéo ou source" required>
+      <label class="check">
+        <input type="checkbox" id="downloadAllowed">
+        Le diffuseur autorise le téléchargement de cette vidéo
+      </label>
+      <button class="primary">Ajouter le programme</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <strong>TV MONDE AS</strong>
+  <p>La télévision du monde.</p>
+  <small>© 2026 TV MONDE AS</small>
+</footer>
+
+</body>
+</html>
